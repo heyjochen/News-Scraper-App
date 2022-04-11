@@ -12,74 +12,81 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-  font-family: "Lato", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .marquee {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 90px 20px;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  text-align: center;
-  overflow: hidden;
+  margin: 2rem 0;
 }
-
-.marquee h3 {
-  font-size: 94px;
-  font-weight: 700;
-  text-transform: uppercase;
+.marquee__inner {
+  margin: 0 auto;
+  will-change: transform;
+  animation-name: marquee;
+  animation-duration: s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
 }
-
-.marquee .marquee-wrapper {
-  width: 100000px;
-  animation: marqueeAnimation 8s linear 0s infinite running;
+@media (min-width: 500px) {
+  .marquee__inner {
+    animation-duration: 6s;
+ }
 }
-
-.marquee h3 .marquee-title {
-  margin-right: 20px;
-  float: left;
+@media (min-width: 850px) {
+  .marquee__inner {
+    animation-duration: 9s;
+ }
 }
-
-.text-stroke-black {
-  color: transparent;
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: #000000;
+@media (min-width: 1200px) {
+  .marquee__inner {
+    animation-duration: 11s;
+ }
 }
-
-@keyframes marqueeAnimation {
-  100% {
-    transform: translateX(-4600px);
-  }
+[data-reverse] .marquee__inner {
+  animation-direction: reverse;
 }
-
-@media (max-width: 992px) {
-  .marquee h3 {
-    font-size: 60px;
-  }
+[data-alternate] .marquee__inner {
+  animation-name: marquee--alternate;
+  animation-direction: alternate;
+  animation-duration: 2.5s;
 }
-
-@media (max-width: 549px) {
-  .marquee h3 {
-    font-size: 50px;
-  }
+@media (min-width: 500px) {
+  [data-alternate] .marquee__inner {
+    animation-duration: 4s;
+ }
 }
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+@media (min-width: 850px) {
+  [data-alternate] .marquee__inner {
+    animation-duration: 7s;
+ }
+}
+@media (min-width: 1200px) {
+  [data-alternate] .marquee__inner {
+    animation-duration: 9s;
+ }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(calc(50vw + 50%));
+ }
+  to {
+    transform: translateX(calc(-50vw + -50%));
+ }
+}
+@keyframes marquee--alternate {
+  from {
+    transform: translateX(calc(50vw + -50%));
+ }
+  to {
+    transform: translateX(calc(-50vw + 50%));
+ }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+code {
+  display: inline;
+  background: #efefef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+}
