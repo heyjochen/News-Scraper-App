@@ -12,7 +12,74 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 90px 20px;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  text-align: center;
+  overflow: hidden;
+}
+
+.marquee h3 {
+  font-size: 94px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.marquee .marquee-wrapper {
+  width: 100000px;
+  animation: marqueeAnimation 8s linear 0s infinite running;
+}
+
+.marquee h3 .marquee-title {
+  margin-right: 20px;
+  float: left;
+}
+
+.text-stroke-black {
+  color: transparent;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #000000;
+}
+
+@keyframes marqueeAnimation {
+  100% {
+    transform: translateX(-4600px);
+  }
+}
+
+@media (max-width: 992px) {
+  .marquee h3 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 549px) {
+  .marquee h3 {
+    font-size: 50px;
+  }
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
