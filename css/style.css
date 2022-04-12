@@ -71,12 +71,12 @@ html, body, div {
 /*******************************************/
 @media (min-width: 500px) {
   .marquee__inner {
-    animation-duration: 8s;
+    animation-duration: 14s;
  }
 }
 @media (min-width: 850px) {
 .marquee__inner {
-    animation-duration: 4s;
+    animation-duration: 14s;  
  }
 }
 @media (min-width: 1200px) {
@@ -94,17 +94,17 @@ html, body, div {
 }
 @media (min-width: 500px) {
   [data-alternate] .marquee__inner {
-    animation-duration: 1s;
+    animation-duration: 14s;
  }
 }
 @media (min-width: 850px) {
   [data-alternate] .marquee__inner {
-    animation-duration: 1s;
+    animation-duration: 14s;
  }
 }
 @media (min-width: 1200px) {
   [data-alternate] .marquee__inner {
-    animation-duration: 3s;
+    animation-duration: 12s;
  }
 }
 
@@ -121,7 +121,7 @@ html, body, div {
 
 @keyframes marquee--alternate {
   from {
-    transform: translateX(calc(50vw + -50%));
+    transform: translateX(calc(50vw + -60%));
  }
   to {
     transform: translateX(calc(-50vw + 50%));

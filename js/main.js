@@ -1,17 +1,21 @@
-fetch(url)
+fetch('')
 .then(res => res.json()) // parse response as JSON
 .then(data => {
   console.log(data)
-  document.querySelector('.heading1').textContent = data.articles[0].title
-  document.querySelector('.heading2').textContent = data.articles[1].title
-  document.querySelector('.heading3').textContent = data.articles[2].title
-  document.querySelector('.heading4').textContent = data.articles[3].title
-  document.querySelector('.heading5').textContent = data.articles[4].title
-  document.querySelector('.heading6').textContent = data.articles[5].title
-  document.querySelector('.heading7').textContent = data.articles[6].title
-  document.querySelector('.heading8').textContent = data.articles[7].title
-  document.querySelector('.heading9').textContent = data.articles[8].title
-  document.querySelector('.heading10').textContent = data.articles[9].title
+
+
+// Create an h1 for every news title and populate the marquee__inner class
+let newsHeading = document.getElementsByClassName('marquee__inner')[0];
+for (let i = 0; i <= 9; i++) {
+    const positionDash = data.articles[i].title.indexOf('-')
+    let h1 = document.createElement('h1');
+    // Trim for only the first X characters and then add title?
+    h1.innerHTML = data.articles[i].title.slice(0,positionDash-1)
+    ;
+    newsHeading.appendChild(h1);
+   }
+  
+  
 
   /*Todo
   - Fix speed depending on length, only display certain amount of character
