@@ -30,14 +30,8 @@ body{
 .buttons{
   height: 100vh;
   padding: 2rem;
-  width: 20rem;
+  width: 250px;
 }
-
-.news {
-  max-width: 1280px;
-  margin-left: 2rem;
-  /* margin: 0 0 0 21rem; */
-} 
 
 
 
@@ -47,11 +41,10 @@ body{
 
 .news-title{
   width: 100%;
-  margin: 0;
   font-family: 'Merriweather', serif;
   font-size: 3rem;
   font-weight: 900;
-  color: transparent;
+  color: white;
   -webkit-text-stroke: 1px;
   -webkit-text-stroke-color: white;
 }
@@ -81,10 +74,9 @@ body{
 /* BUTTONS
 /*******************************************/
 .button {
-  width: 100%;
+
   appearance: button;
-  background-color: #1899D6;
-  border: solid transparent;
+  border: solid white;
   border-radius: 16px;
   border-width: 0 0 4px;
   box-sizing: border-box;
@@ -96,7 +88,7 @@ body{
   font-weight: 700;
   letter-spacing: .8px;
   line-height: 20px;
-  margin: 0;
+  margin: .4rem 0;
   outline: none;
   overflow: visible;
   padding: 13px 16px;
@@ -107,8 +99,8 @@ body{
   transition: filter .2s;
   user-select: none;
   -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
+
+
 
 }
 
@@ -126,8 +118,6 @@ body{
   top: 0;
   z-index: -1;
 }
-
-
 
 
 
