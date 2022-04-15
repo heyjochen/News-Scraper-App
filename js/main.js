@@ -1,34 +1,59 @@
-fetch('')
-.then(res => res.json()) // parse response as JSON
-.then(data => {
-  console.log(data)
+// for every article that we fetch we create an h1, h2, a div and a h3
+// We set the text content to the respective fetched values
+// we append the items to the section
+
+class News{
+  //What to put in here?
+  constructor(){
+
+  }
+  getNewsArticles(){
+    fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=fe0f8edc63764895be223c86d367cf91')
+    .then(res => res.json()) // parse response as JSON
+    .then(data => {
+     console.log(data.articles);
+     data.articles.forEach((e) => {
+
+       // Create an populate headings
+       const heading = document.createElement('h1');
+       heading.className = 'news-title';
+       heading.textContent = e.title;
+       document.querySelector('.news').appendChild(heading);
+
+       // Create an populate sources
+       const source = document.createElement('h2');
+       source.className = 'news-source';
+       source.textContent = e.source.name;
+       document.querySelector('.news').appendChild(source);
+
+       //Link the Sources with the
+       const link = document.createElement('a');
+       link.className = 'news-link';
+       link.textContent = 'Read More';
+       link.href = e.url
+       document.querySelector('.news').appendChild(link);
+
+       // Add the divider
+      const divider = document.createElement('div');
+      divider.className = 'news-divider';
+      document.querySelector('.news').appendChild(divider);
+     })
 
 
-// Create an h1 for every news title and populate the marquee__inner class
-let newsHeading = document.getElementsByClassName('marquee__inner')[0];
-for (let i = 0; i <= 9; i++) {
-    const positionDash = data.articles[i].title.indexOf('-')
-    let h1 = document.createElement('h1');
-    // Trim for only the first X characters and then add title?
-    h1.innerHTML = data.articles[i].title.slice(0,positionDash-1)
-    ;
-    newsHeading.appendChild(h1);
-   }
-  
-  
-
-  /*Todo
-  - Fix speed depending on length, only display certain amount of character
-  - Dry code
-  - Include Headline Source in smaller typo after title
-  - Add links to headings
-  - How to hide API key
-  - Write everything in a Class
-  - async await?
-  - Include options to filter depending on topic and exclude categories
-  */
-
-})
-.catch(err => {
+    })
+    .catch(err => {
     console.log(`error ${err}`)
-});
+    });
+  }
+
+}
+
+const newHeadlines = new News()
+newHeadlines.getNewsArticles()
+
+
+
+
+
+
+
