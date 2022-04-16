@@ -1,19 +1,12 @@
 // To Do
 // Create a dropdown and search Function
-// Slice the title and remove everything after -
-// Work on CSS: Display source after title, make buttons better, work on width of button section
-
-
+// Hide API Key
+// change whole API
 class News{
   //What to put in here?
   constructor(){
-
   }
 
-
-  // How can we check if there is an element, if so change the content?
-
-  
   getNewsArticles(category){
     // Checks if there already is content, if so it removes it
     const newsSection = document.getElementById("news")
@@ -28,8 +21,11 @@ class News{
 
        // Create an populate headings
        const heading = document.createElement('h1');
+       // Slice the headline title up until '-'
+       const indexOfDash = e.title.indexOf('-')
+       const headingModified = e.title.slice(0, indexOfDash-1)
        heading.className = 'news-title';
-       heading.textContent = e.title;
+       heading.textContent = headingModified;
        document.querySelector('#news').appendChild(heading);
 
        // Create an populate sources
@@ -80,15 +76,3 @@ HEALTH.addEventListener('click', () => newHeadlines.getNewsArticles('health'))
 SCIENCE.addEventListener('click', () => newHeadlines.getNewsArticles('science'))
 SPORTS.addEventListener('click', () => newHeadlines.getNewsArticles('sports'))
 TECHNOLOGY.addEventListener('click', () => newHeadlines.getNewsArticles('health'))
-
-
-// How can I swap elements and not just replace them?
-
-
-// newHeadlines.getNewsArticles()
-
-
-// button.addEventListener('click', () => {
-//   calculator.appendNumber(button.innerText)
-//   calculator.updateDisplay()
-// })

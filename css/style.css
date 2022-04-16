@@ -10,29 +10,33 @@
 }
 
 
-
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@400;700&display=swap');
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-html, body, div {
+html, body, div, a {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
 body{
   display: flex;
-  height: 100vh;
-  background: rgba(103,161,61,0.9);
+  background: rgba(0,0,0,0.8);
 }
 
-.buttons{
+.links{
+  position: fixed;
   height: 100vh;
+  width: 20rem;
   padding: 2rem;
-  width: 250px;
 }
 
+#news{
+  margin-top: 1.5rem;
+  width: 80vw;
+  margin-left: 21rem;
+}
 
 
 /******************************************
@@ -40,17 +44,18 @@ body{
 /*******************************************/
 
 .news-title{
-  width: 100%;
-  font-family: 'Merriweather', serif;
+  width: 90%;
+  font-family: 'Akshar', sans-serif;
   font-size: 3rem;
-  font-weight: 900;
-  color: white;
+  font-weight: 400;
+  line-height: 3.2rem;
+  color: rgba(0,0,0,0.4);
   -webkit-text-stroke: 1px;
   -webkit-text-stroke-color: white;
 }
 
 .news-source{
-  margin: 0;
+  margin: 1rem 0 0 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: rgba(255,255,255,.6);
@@ -60,64 +65,34 @@ body{
   width: 90%;
   height: 0.1rem;
   background-color: white;
-  margin: 0.5rem 0 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .news-link{
   font-family: 'Merriweather', serif;
   font-size: 1.5rem;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,1);
 }
 
 
 /******************************************
-/* BUTTONS
+/* LINKS
 /*******************************************/
-.button {
-
-  appearance: button;
-  border: solid white;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
+a {
+  display: block;
+  width: 100%;
   color: #FFFFFF;
   cursor: pointer;
-  display: inline-block;
   font-family: din-round,sans-serif;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 400;
   letter-spacing: .8px;
-  line-height: 20px;
-  margin: .4rem 0;
-  outline: none;
-  overflow: visible;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter .2s;
-  user-select: none;
-  -webkit-user-select: none;
-
-
-
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  transform: translateY(0.25rem);
 }
 
-.button:after{
-  background-clip: padding-box;
-  background-color: #1CB0F6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  bottom: -4px;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-}
 
 
 
