@@ -29,7 +29,7 @@ class News{
     .then(data => {
      data.articles.forEach((e) => {
 
-       // Create an populate headings
+       // Create and populate headings
        const heading = document.createElement('a');
        // Slice the headline title up until '-'
       //  const indexOfDash = e.title.indexOf('-')
@@ -39,7 +39,7 @@ class News{
        heading.href = e.link
        document.querySelector('#news').appendChild(heading);
 
-       // Create an populate sources
+       // Create and populate sources
        const source = document.createElement('h2');
        source.className = 'news-source';
        source.textContent = e.clean_url;
