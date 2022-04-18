@@ -5,7 +5,7 @@
 
 
 // Import the API Key
-import WEATHER_API_KEY from './apikey.js';
+// import WEATHER_API_KEY from './apikey.js';
 
 class News{
   //What to put in here?
