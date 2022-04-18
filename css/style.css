@@ -33,11 +33,24 @@ body{
 }
 
 #news{
+  display: flex;
+  flex-direction: column;
   margin-top: 1.5rem;
   width: 80vw;
   margin-left: 21rem;
 }
 
+.news-article-info{
+  width: 80%;
+}
+
+.news-article-img{
+  width: 20%;
+}
+
+.news-article-img img{
+  width: 100%;
+}
 
 /******************************************
 /* TYPO
