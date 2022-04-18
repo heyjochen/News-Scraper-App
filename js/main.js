@@ -30,12 +30,13 @@ class News{
      data.articles.forEach((e) => {
 
        // Create an populate headings
-       const heading = document.createElement('h1');
+       const heading = document.createElement('a');
        // Slice the headline title up until '-'
       //  const indexOfDash = e.title.indexOf('-')
       //  const headingModified = e.title.slice(0, indexOfDash-1)
        heading.className = 'news-title';
        heading.textContent = e.title;
+       heading.href = e.link
        document.querySelector('#news').appendChild(heading);
 
        // Create an populate sources
