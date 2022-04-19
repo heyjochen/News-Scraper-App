@@ -1,7 +1,6 @@
 // To Do
-// Create a dropdown and search Function
-// Hide API Key
-// change whole API
+// include Twitter Link and Logo
+// make responsive
 
 class News{
   //What to put in here?
@@ -11,14 +10,10 @@ class News{
 
   getNewsArticles(category){
     // Checks if there already is content, if so it removes it
-    const newsArticle = document.querySelector("#news")
-    while (newsArticle.firstChild) {
-        newsArticle.firstChild.remove()
+    const newsSection = document.getElementById("news")
+    while (newsSection.firstChild) {
+        newsSection.firstChild.remove()
     } 
-    // const newsImage = document.querySelector(".news-article-image")
-    // while (newsImage.firstChild) {
-    //   newsImage.firstChild.remove()
-    // } 
 
     fetch(
       `https://api.newscatcherapi.com/v2/latest_headlines?countries=US&topic=${category}`,
@@ -33,53 +28,36 @@ class News{
     .then(data => {
      data.articles.forEach((e,i) => {
 
-      // Create a article inside the section for every article
+      // Create article element for each article
       const article = document.createElement('article')
-      article.className = `news-article${i}`
-      document.querySelector('#news').appendChild(article)
+      article.id = `article${i}`
+      document.querySelector('#news').appendChild(article);
+       
       
-      // Create a div for every div with .news-article-info class
-      const divInfo = document.createElement('div')
-      divInfo.className = `news-article-info${i}`
-      document.querySelector(`.news-article${i}`).appendChild(divInfo)
-      
-      // Create a div for every div with .news-article-image class
-      const divImage = document.createElement('div')
-      divImage.className = `news-article-img${i}`;
-      document.querySelector(`.news-article${i}`).appendChild(divImage)
-
-
-      // Create the headings for each article
+      // Create and populate headings
        const heading = document.createElement('a');
-       heading.className = `news-title${i}`;
+       heading.className = 'news-title';
        heading.textContent = e.title;
        heading.href = e.link
-       document.querySelector(`.news-article-info${i}`).appendChild(heading);
+       document.querySelector(`#article${i}`).appendChild(heading);
 
        // Create and populate sources
        const source = document.createElement('h2');
        source.className = 'news-source';
        source.textContent = e.clean_url;
-       document.querySelector(`.news-article-info${i}`).appendChild(source);
+       document.querySelector(`#article${i}`).appendChild(source);
 
        //Link the Sources with the
       //  const link = document.createElement('a');
       //  link.className = 'news-link';
       //  link.textContent = 'Read More';
       //  link.href = e.link
-      //  document.querySelector(`.news-article-info${i}`).appendChild(link);
+      //  document.querySelector(`.article${i}`).appendChild(link);
 
-       // Add the divider
-      //  const divider = document.createElement('div');
-      //  divider.className = 'news-divider';
-      //  document.querySelector(`.news-article-info${i}`).appendChild(divider);
-       
-       // Add the article image
-       const image = document.createElement('img');
-       image.className = 'news-image';
-       image.src = e.media
-       document.querySelector(`.news-article-img${i}`).appendChild(image);
-      
+      // Add the divider
+      const divider = document.createElement('div');
+      divider.className = 'news-divider';
+      document.querySelector(`#article${i}`).appendChild(divider);
      })
 
 

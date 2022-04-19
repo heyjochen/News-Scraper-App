@@ -41,26 +41,7 @@ body{
 }
 
 #news article {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem 2rem;
-}
-
-/* #news article:first-child{
-  width: 100%;
-} */
-
-#news > article > div {
-  width: 80%;
-}
-
-#news > article > div + div{
-  width: 20%;
-}
-#news > article > div > img{
-  object-fit: cover;
-  width: 100%;
 }
 
 /******************************************
@@ -68,25 +49,25 @@ body{
 /*******************************************/
 
 .news-title{
-  width: 90%;
+  width: 100%;
+  padding: 0 4rem 0 0;
   font-family: 'Akshar', sans-serif;
   font-size: 3rem;
   font-weight: 400;
-  line-height: 3.2rem;
-  color: rgba(0,0,0,0.4);
-  -webkit-text-stroke: 1px;
-  -webkit-text-stroke-color: white;
+  line-height: 3rem;
+  color: rgba(255,255,255,0.8);
+
 }
 
 .news-source{
-  margin: .1rem 0 0 0;
+  margin: .4rem 0 0 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: rgba(255,255,255,.6);
 }
 
 .news-divider{
-  width: 90%;
+  width: 100%;
   height: 0.1rem;
   background-color: white;
   margin: 0 0 2rem 0;
@@ -108,7 +89,7 @@ a {
   color: #FFFFFF;
   cursor: pointer;
   font-family: din-round,sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 400;
   letter-spacing: .8px;
   text-decoration: none;
@@ -116,75 +97,3 @@ a {
   padding: 0;
   transform: translateY(0.25rem);
 }
-
-
-
-
-
-
-
-
-
-
-
-/******************************************
-/* RESPONSIVE
-/*******************************************/
-/* @media (min-width: 500px) {
-  .marquee__inner {
-    animation-duration: 14s;
- }
-}
-@media (min-width: 850px) {
-.marquee__inner {
-    animation-duration: 14s;  
- }
-}
-@media (min-width: 1200px) {
-  .marquee__inner {
-    animation-duration: 14s;
- }
-}
-[data-reverse] .marquee__inner {
-  animation-direction: reverse;
-}
-[data-alternate] .marquee__inner {
-  animation-name: marquee--alternate;
-  animation-direction: alternate-reverse;
-  animation-duration: 14s;
-}
-@media (min-width: 500px) {
-  [data-alternate] .marquee__inner {
-    animation-duration: 14s;
- }
-}
-@media (min-width: 850px) {
-  [data-alternate] .marquee__inner {
-    animation-duration: 14s;
- }
-}
-@media (min-width: 1200px) {
-  [data-alternate] .marquee__inner {
-    animation-duration: 12s;
- }
-}
-
-
-@keyframes marquee {
-  from {
-    transform: translateX(calc(50vw + 50%));
- }
-  to {
-    transform: translateX(calc(-50vw + -50%));
- }
-}
-
-
-@keyframes marquee--alternate {
-  from {
-    transform: translateX(calc(50vw + -60%));
- }
-  to {
-    transform: translateX(calc(-50vw + 50%));
- }
-} */
