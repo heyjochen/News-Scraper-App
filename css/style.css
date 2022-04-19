@@ -35,31 +35,56 @@ body{
 #news{
   display: flex;
   flex-direction: column;
-  margin-top: 1.5rem;
+  padding: 2rem;
   width: 80vw;
   margin-left: 21rem;
 }
 
-#news article {
-  padding: 1rem 2rem;
-}
 
 /******************************************
 /* TYPO
 /*******************************************/
+h1{
+  margin: 0;
+  padding: 0;
+  font-size: 10vw;
+  color: white;
+}
 
-.news-title{
+h2{
+  margin: 0;
+  padding: 0;
+  font-size: 4vw;
+  color: white;
+}
+
+h3{
+  margin: 2rem 0;
+  padding: 0;
+  font-size: 3vw;
+  color: white;
+}
+
+p a{
+  margin: 0;
+  padding: 0;
+  font-size: 2vw;
+  color: white;
+  text-decoration: underline;
+}
+
+.heading1-news-title{
   width: 100%;
   padding: 0 4rem 0 0;
   font-family: 'Akshar', sans-serif;
   font-size: 3rem;
   font-weight: 400;
   line-height: 3rem;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.9);
 
 }
 
-.news-source{
+.heading2-news-source{
   margin: .4rem 0 0 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
@@ -73,20 +98,13 @@ body{
   margin: 0 0 2rem 0;
 }
 
-.news-link{
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
-  color: rgba(255,255,255,1);
-}
-
-
 /******************************************
 /* LINKS
 /*******************************************/
 a {
   display: block;
   width: 100%;
-  color: #FFFFFF;
+  color: rgba(255,255,255,0.9);
   cursor: pointer;
   font-family: din-round,sans-serif;
   font-size: 3rem;
@@ -97,3 +115,4 @@ a {
   padding: 0;
   transform: translateY(0.25rem);
 }
+
