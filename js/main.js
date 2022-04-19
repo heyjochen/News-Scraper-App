@@ -35,18 +35,18 @@ class News{
 
       // Create a article inside the section for every article
       const article = document.createElement('article')
-      article.className = `news-article${i}`
+      article.className = `news-article`
       document.querySelector('#news').appendChild(article)
       
       // Create a div for every div with .news-article-info class
       const divInfo = document.createElement('div')
       divInfo.className = `news-article-info${i}`
-      document.querySelector(`.news-article${i}`).appendChild(divInfo)
+      document.querySelector(`.news-article`).appendChild(divInfo)
       
       // Create a div for every div with .news-article-image class
       const divImage = document.createElement('div')
       divImage.className = `news-article-img${i}`;
-      document.querySelector(`.news-article${i}`).appendChild(divImage)
+      document.querySelector(`.news-article`).appendChild(divImage)
 
 
       // Create the headings for each article
