@@ -35,18 +35,18 @@ class News{
 
       // Create a article inside the section for every article
       const article = document.createElement('article')
-      article.className = `news-article`
+      article.className = `news-article${i}`
       document.querySelector('#news').appendChild(article)
       
       // Create a div for every div with .news-article-info class
       const divInfo = document.createElement('div')
       divInfo.className = `news-article-info${i}`
-      document.querySelector(`.news-article`).appendChild(divInfo)
+      document.querySelector(`.news-article${i}`).appendChild(divInfo)
       
       // Create a div for every div with .news-article-image class
       const divImage = document.createElement('div')
       divImage.className = `news-article-img${i}`;
-      document.querySelector(`.news-article`).appendChild(divImage)
+      document.querySelector(`.news-article${i}`).appendChild(divImage)
 
 
       // Create the headings for each article
@@ -63,16 +63,16 @@ class News{
        document.querySelector(`.news-article-info${i}`).appendChild(source);
 
        //Link the Sources with the
-       const link = document.createElement('a');
-       link.className = 'news-link';
-       link.textContent = 'Read More';
-       link.href = e.link
-       document.querySelector(`.news-article-info${i}`).appendChild(link);
+      //  const link = document.createElement('a');
+      //  link.className = 'news-link';
+      //  link.textContent = 'Read More';
+      //  link.href = e.link
+      //  document.querySelector(`.news-article-info${i}`).appendChild(link);
 
        // Add the divider
-       const divider = document.createElement('div');
-       divider.className = 'news-divider';
-       document.querySelector(`.news-article-info${i}`).appendChild(divider);
+      //  const divider = document.createElement('div');
+      //  divider.className = 'news-divider';
+      //  document.querySelector(`.news-article-info${i}`).appendChild(divider);
        
        // Add the article image
        const image = document.createElement('img');

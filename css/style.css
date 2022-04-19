@@ -40,15 +40,26 @@ body{
   margin-left: 21rem;
 }
 
-.news-article-info{
+#news article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* #news article:first-child{
+  width: 100%;
+} */
+
+#news > article > div {
   width: 80%;
 }
 
-.news-article-img{
+#news > article > div + div{
   width: 20%;
 }
-
-.news-article-img img{
+#news > article > div > img{
+  object-fit: cover;
   width: 100%;
 }
 
@@ -68,7 +79,7 @@ body{
 }
 
 .news-source{
-  margin: 1rem 0 0 0;
+  margin: .1rem 0 0 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: rgba(255,255,255,.6);
