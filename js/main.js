@@ -1,6 +1,8 @@
 // To Do
 // fix space between Twitter Link and Logo
 // make responsive
+// check if following article is same as previous, if so don't display
+// fetch in function outside of the class
 
 class News{
   //What to put in here?
@@ -26,7 +28,7 @@ class News{
     )
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-      console.log(data.articles)
+
      data.articles.forEach((e,i) => {
 
 
