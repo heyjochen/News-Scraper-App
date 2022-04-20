@@ -1,5 +1,5 @@
 // To Do
-// include Twitter Link and Logo
+// fix space between Twitter Link and Logo
 // make responsive
 
 class News{
@@ -58,13 +58,8 @@ class News{
       document.querySelector(`#div-source-twitter${i}`).appendChild(source);
 
 
-      // Create Twitter link
-      // if (e.twitter_account !== null) {
-      // const twitter = document.createElement('h2')
-      // twitter.className = 'heading2-news-twitter'
-
       // edit the Twitter Account Info if there is Account info
-      if (e.twitter_account !== null && e.twitter_account.startsWith('@')){
+      if (e.twitter_account !== null && e.twitter_account.startsWith('@')) {
 
         const twitterLink = document.createElement('a')
         twitterLink.id = `twitterLink${i}`
@@ -74,24 +69,10 @@ class News{
         twitterLogo.className = 'twitter-logo'
         twitterLogo.src = 'assets/twitter.svg'
 
-
-
-
         document.querySelector(`#div-source-twitter${i}`).appendChild(twitterLink)
         document.querySelector(`#twitterLink${i}`).appendChild(twitterLogo)
+
       } 
-
-
-      // twitter.textContent = e.twitter_account
-      
-
-      // create a div to store twitter source and logo
-      // const div = document.createElement('div')
-      // div.className = 'div-twitter'
-      // document.querySelector(
-      // document.querySelector(`#div-source-twitter${i}`).appendChild(twitterLogo);
-      // document.querySelector(`#div-source-twitter${i}`).appendChild(twitter);
-      
 
       
       // Add the divider

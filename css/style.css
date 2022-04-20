@@ -92,9 +92,11 @@ p a{
   color: rgba(255,255,255,.6);
 }
 
-.div-source-twitter{
+
+article div:first-of-type{
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .news-divider{
@@ -110,6 +112,7 @@ p a{
 .twitter-logo{
   width: 20px;
   fill: white;
+  transform: translateY(-0.4rem);
 }
 
 
