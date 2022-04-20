@@ -84,11 +84,17 @@ p a{
 
 }
 
-.heading2-news-source{
+.heading2-news-source,
+.heading2-news-twitter{
   margin: .4rem 0 0 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   color: rgba(255,255,255,.6);
+}
+
+.div-source-twitter{
+  display: flex;
+  justify-content: space-between;
 }
 
 .news-divider{
@@ -97,6 +103,15 @@ p a{
   background-color: white;
   margin: 0 0 2rem 0;
 }
+
+/******************************************
+/* ASSETS
+/*******************************************/
+.twitter-logo{
+  width: 20px;
+  fill: white;
+}
+
 
 /******************************************
 /* LINKS

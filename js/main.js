@@ -26,6 +26,7 @@ class News{
     )
     .then(res => res.json()) // parse response as JSON
     .then(data => {
+      console.log(data.articles)
      data.articles.forEach((e,i) => {
 
 
@@ -36,20 +37,63 @@ class News{
        
       
       // Create and populate headings
-       const heading = document.createElement('a');
-       heading.className = 'heading1-news-title';
-       heading.textContent = e.title;
-       heading.href = e.link
-       document.querySelector(`#article${i}`).appendChild(heading);
+      const heading = document.createElement('a');
+      heading.className = 'heading1-news-title';
+      heading.textContent = e.title;
+      heading.href = e.link
+      document.querySelector(`#article${i}`).appendChild(heading);
 
 
-       // Create and populate sources
-       const source = document.createElement('h2');
-       source.className = 'heading2-news-source';
-       source.textContent = e.clean_url;
-       document.querySelector(`#article${i}`).appendChild(source);
+      // Create a div for the sources and twitter
+      const divSourceTwitter = document.createElement('div')
+      divSourceTwitter.className = 'div-source-twitter'
+      divSourceTwitter.id = `div-source-twitter${i}`
+      document.querySelector(`#article${i}`).appendChild(divSourceTwitter);
 
 
+      // Create and populate sources
+      const source = document.createElement('h2');
+      source.className = 'heading2-news-source';
+      source.textContent = e.clean_url;
+      document.querySelector(`#div-source-twitter${i}`).appendChild(source);
+
+
+      // Create Twitter link
+      // if (e.twitter_account !== null) {
+      // const twitter = document.createElement('h2')
+      // twitter.className = 'heading2-news-twitter'
+
+      // edit the Twitter Account Info if there is Account info
+      if (e.twitter_account !== null && e.twitter_account.startsWith('@')){
+
+        const twitterLink = document.createElement('a')
+        twitterLink.id = `twitterLink${i}`
+        const twitterLinkSrc = e.twitter_account.slice(1,e.twitter_account.length)
+        twitterLink.href = `http://twitter.com/${twitterLinkSrc}`
+        const twitterLogo = document.createElement('img')
+        twitterLogo.className = 'twitter-logo'
+        twitterLogo.src = 'assets/twitter.svg'
+
+
+
+
+        document.querySelector(`#div-source-twitter${i}`).appendChild(twitterLink)
+        document.querySelector(`#twitterLink${i}`).appendChild(twitterLogo)
+      } 
+
+
+      // twitter.textContent = e.twitter_account
+      
+
+      // create a div to store twitter source and logo
+      // const div = document.createElement('div')
+      // div.className = 'div-twitter'
+      // document.querySelector(
+      // document.querySelector(`#div-source-twitter${i}`).appendChild(twitterLogo);
+      // document.querySelector(`#div-source-twitter${i}`).appendChild(twitter);
+      
+
+      
       // Add the divider
       const divider = document.createElement('div');
       divider.className = 'news-divider';
