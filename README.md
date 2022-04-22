@@ -8,7 +8,7 @@ Short Intro Sentence
 Building this App, I focused on integrating content from an API and filtering out working properties.
 
 ## Optimizations
-When I improve this project, I would update my media queries and would focus on including more interactive content.
+When I improve this project, I would concentrate on abstracting the logic in my JS code. I will focus first on writing dry code for the eventListeners.
 
 ## Lessons Learned:
 I learned how to dig into API requests and used a variety of string and array methods to display the content needed.
