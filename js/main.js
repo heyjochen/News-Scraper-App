@@ -96,36 +96,14 @@ class News{
 //Create News
 const newHeadlines = new News()
 
-
-// Buttons
-const BUSINESS = document.querySelector('#business')
-const BEAUTY = document.querySelector('#beauty')
-const ECONOMICS = document.querySelector('#economics')
-const ENERGY = document.querySelector('#energy')
-const FINANCE = document.querySelector('#finance')
-const FOOD = document.querySelector('#food')
-const GAMING = document.querySelector('#gaming')
-const MUSIC = document.querySelector('#music')
-const SCIENCE = document.querySelector('#science')
-const SPORT = document.querySelector('#sport')
-const TECHNOLOGY = document.querySelector('#technology')
-const TRAVEL = document.querySelector('#travel')
-const POLITICS = document.querySelector('#politics')
-const WORLD = document.querySelector('#world')
-
-
-// Click-Events
-BUSINESS.addEventListener('click', () => newHeadlines.getNewsArticles('business'))
-BEAUTY.addEventListener('click', () => newHeadlines.getNewsArticles('beauty'))
-ECONOMICS.addEventListener('click', () => newHeadlines.getNewsArticles('economics'))
-ENERGY.addEventListener('click', () => newHeadlines.getNewsArticles('energy'))
-FINANCE.addEventListener('click', () => newHeadlines.getNewsArticles('finance'))
-FOOD.addEventListener('click', () => newHeadlines.getNewsArticles('food'))
-GAMING.addEventListener('click', () => newHeadlines.getNewsArticles('gaming'))
-MUSIC.addEventListener('click', () => newHeadlines.getNewsArticles('music'))
-SCIENCE.addEventListener('click', () => newHeadlines.getNewsArticles('science'))
-SPORT.addEventListener('click', () => newHeadlines.getNewsArticles('sport'))
-TECHNOLOGY.addEventListener('click', () => newHeadlines.getNewsArticles('tech'))
-TRAVEL.addEventListener('click', () => newHeadlines.getNewsArticles('travel'))
-POLITICS.addEventListener('click', () => newHeadlines.getNewsArticles('politics'))
-WORLD.addEventListener('click', () => newHeadlines.getNewsArticles('world'))
+const buttons = document.querySelector('.links')
+buttons.addEventListener('click', e => {
+  const {target} = e;
+  const {id} = target;
+  // condition to check user clicks on link
+  if (!target.matches('.link')){
+    return;
+  } else {
+    newHeadlines.getNewsArticles(`${id}`)
+  } 
+})
