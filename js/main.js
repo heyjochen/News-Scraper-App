@@ -1,4 +1,4 @@
-import { header } from "/js/header.js";
+import { header } from "js/header.js";
 
 class News {
   //What to put in here?
