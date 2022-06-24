@@ -11,13 +11,7 @@ Building this App, I focused on integrating content from an API and filtering ou
 When I improve this project, I would concentrate on abstracting the logic in my JS code. I will focus first on writing dry code for the eventListeners.
 
 ## Lessons Learned:
-I learned how to dig into API requests and used a variety of string and array methods to display the content needed. I came back to this project after a couple weeks and was able to refine my code and saved about 20 lines of code:
-
-Before that I had a single eventListener for every Category, which created unnecessary repetition.
- <img src="https://github.com/heyjochen/News-Scraper-App/blob/main/assets/oldCode.png" width="100%"  alt=""/>
-
-By creating a variable called buttons and assigning the class of .links to it, which includes all of the categories, I could then place an eventListener on that variable, that extract the ID of each link and then runs the newHeadlines.getNewsArticles() method.
-<img src="https://github.com/heyjochen/News-Scraper-App/blob/main/assets/newCode.png" width="100%"  alt=""/>
+I learned how to dig into API requests and used a variety of string and array methods to display the content needed. I came back to this project after a couple weeks and was able to refine my code and saved about 20 lines of code through event delegation.
 
 ## More Projects
 
